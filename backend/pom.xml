@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>ecommerce-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>backend</artifactId>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}-${project.packaging}</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <description>ECommerce: Backend</description>
+
+    <modules>
+        <module>services</module>
+    </modules>
+
+    <properties>
+        <build.timestamp>${maven.build.timestamp}</build.timestamp>
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>user-management</artifactId>
+                <version>${project.version}</version>
+                <classifier>prepare-package</classifier>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>catalog</artifactId>
+                <version>${project.version}</version>
+                <classifier>prepare-package</classifier>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>basket</artifactId>
+                <version>${project.version}</version>
+                <classifier>prepare-package</classifier>
+                <type>war</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

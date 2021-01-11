@@ -1,0 +1,4 @@
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" version="2.0">
+    <entity class="com.example.basket.entity.Order" name="Order"></entity>
+    <entity class="com.example.basket.entity.Wip" name="Wip"></entity>
+</entity-mappings>

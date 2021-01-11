@@ -1,0 +1,17 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="catalog-pu" transaction-type="JTA">
+        <jta-data-source>java:jboss/catalogDatasource</jta-data-source>
+        <mapping-file>META-INF/orm.xml</mapping-file>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,7 @@
+./jboss-cli.sh --connect controller=127.0.0.1
+
+module add --name=org.postgresql --resources=C:/Users/Razvan/.m2/repository/org/postgresql/postgresql/postgresql-42.2.18.jar --dependencies=javax.api,javax.transaction.api
+
+/subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgresql",driver-class-name=org.postgresql.Driver)
+
+data-source add --jndi-name=java:jboss/datasources/postgresDS --name=postgresDS --connection-url=jdbc:postgresql://localhost:5432/postgres --driver-name=postgres --user-name=postgres --password=admin --profile=full-ha
